@@ -1,0 +1,127 @@
+          education  age  capital_gain                race  capital-loss  \
+0         Bachelors   39          2174               White             0   
+1         Bachelors   50           NaN               White             0   
+2           HS-grad   38           NaN               White             0   
+3              11th   53           NaN               Black             0   
+4         Bachelors   28             0               Black             0   
+5           Masters   37             0               White             0   
+6               9th   49             0               Black             0   
+7           HS-grad   52             0               White             0   
+8           Masters   31         14084               White             0   
+9         Bachelors   42          5178               White             0   
+10     Some-college   37             0               Black             0   
+11        Bachelors   30             0  Asian-Pac-Islander             0   
+12        Bachelors   23             0               White             0   
+13          7th-8th   34             0  Amer-Indian-Eskimo             0   
+14          HS-grad   25             0               White             0   
+15          HS-grad   32             0               White             0   
+16             11th   38             0               White             0   
+17          Masters   43             0               White             0   
+18        Doctorate   40             0               White             0   
+19          HS-grad   54             0               Black             0   
+20              9th   35             0               Black             0   
+21             11th   43             0               White          2042   
+22          HS-grad   59             0               White             0   
+23        Bachelors   56             0               White             0   
+24          HS-grad   19             0               White             0   
+25     Some-college   54             0  Asian-Pac-Islander             0   
+26          HS-grad   39             0               White             0   
+27          HS-grad   49             0               White             0   
+28     Some-college   20             0               Black             0   
+29        Bachelors   45             0               White          1408   
+...             ...  ...           ...                 ...           ...   
+29506       HS-grad   30             0               White             0   
+29507          10th   32             0               White             0   
+29508  Some-college   22             0               White             0   
+29509       HS-grad   31             0               White             0   
+29510       HS-grad   29             0               White             0   
+29511     Bachelors   35             0               White             0   
+29512     Bachelors   30             0  Asian-Pac-Islander             0   
+29513     Doctorate   34             0               White             0   
+29514     Bachelors   54             0  Asian-Pac-Islander             0   
+29515  Some-college   37             0               White             0   
+29516          12th   22             0               Black             0   
+29517     Bachelors   34             0               White             0   
+29518       HS-grad   30             0               Black             0   
+29519     Bachelors   38         15020               Black             0   
+29520     Doctorate   71             0               White             0   
+29521       HS-grad   45             0               White             0   
+29522       HS-grad   41             0               Black             0   
+29523       HS-grad   72             0               White             0   
+29524       Masters   31             0               Other             0   
+29525       HS-grad   43             0               White             0   
+29526  Some-college   43             0               White             0   
+29527  Some-college   43             0               White             0   
+29528          10th   32             0  Amer-Indian-Eskimo             0   
+29529       Masters   32             0  Asian-Pac-Islander             0   
+29530       Masters   53             0               White             0   
+29531  Some-college   22             0               White             0   
+29532       HS-grad   40             0               White             0   
+29533       HS-grad   58             0               White             0   
+29534       HS-grad   22             0               White             0   
+29535       HS-grad   52         15024               White             0   
+
+       hours-per-week     sex classification  
+0                  40    Male          <=50K  
+1                  13    Male          <=50K  
+2                  40    Male          <=50K  
+3                  40    Male          <=50K  
+4                  40  Female          <=50K  
+5                  40  Female          <=50K  
+6                  16  Female          <=50K  
+7                  45    Male           >50K  
+8                  50  Female           >50K  
+9                  40    Male           >50K  
+10                 80    Male           >50K  
+11                 40    Male           >50K  
+12                 30  Female          <=50K  
+13                 45    Male          <=50K  
+14                 35    Male          <=50K  
+15                 40    Male          <=50K  
+16                 50    Male          <=50K  
+17                 45  Female           >50K  
+18                 60    Male           >50K  
+19                 20  Female          <=50K  
+20                 40    Male          <=50K  
+21                 40    Male          <=50K  
+22                 40  Female          <=50K  
+23                 40    Male           >50K  
+24                 40    Male          <=50K  
+25                 60    Male           >50K  
+26                 80    Male          <=50K  
+27                 40    Male          <=50K  
+28                 44    Male          <=50K  
+29                 40    Male          <=50K  
+...               ...     ...            ...  
+29506              55    Male          <=50K  
+29507              40    Male          <=50K  
+29508              40    Male          <=50K  
+29509              40  Female          <=50K  
+29510              35  Female          <=50K  
+29511              55  Female           >50K  
+29512              99  Female          <=50K  
+29513              60    Male           >50K  
+29514              50    Male           >50K  
+29515              39  Female          <=50K  
+29516              35    Male          <=50K  
+29517              55  Female           >50K  
+29518              46    Male          <=50K  
+29519              45  Female           >50K  
+29520              10    Male           >50K  
+29521              40  Female          <=50K  
+29522              32  Female          <=50K  
+29523              25    Male          <=50K  
+29524              30  Female          <=50K  
+29525              40    Male          <=50K  
+29526              40  Female          <=50K  
+29527              50    Male          <=50K  
+29528              40    Male          <=50K  
+29529              11    Male          <=50K  
+29530              40    Male           >50K  
+29531              40    Male          <=50K  
+29532              40    Male           >50K  
+29533              40  Female          <=50K  
+29534              20    Male          <=50K  
+29535              40  Female           >50K  
+
+[29536 rows x 8 columns]
