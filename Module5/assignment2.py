@@ -2,6 +2,8 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 import matplotlib
+import numpy as np 
+from sklearn.cluster import KMeans 
 
 matplotlib.style.use('ggplot') # Look Pretty
 
@@ -23,7 +25,10 @@ def showandtell(title=None):
 # Convert the date using pd.to_datetime, and the time using pd.to_timedelta
 #
 # .. your code here ..
-
+df = pd.read_csv('Datasets/CDR.csv')
+df.CallDate = pd.to_datetime(df.CallDate, errors='coerce')
+df.CallTime = pd.to_timedelta(df.CallTime, errors='coerce')
+df.Duration = pd.to_timedelta(df.Duration, errors='coerce')
 
 #
 # TODO: Get a distinct list of "In" phone numbers (users) and store the values in a
@@ -31,18 +36,19 @@ def showandtell(title=None):
 # Hint: https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.tolist.html
 #
 # .. your code here ..
-
+Inl = np.array(df.In.unique()).tolist()
+print(Inl)
 
 # 
 # TODO: Create a slice called user1 that filters to only include dataset records where the
 # "In" feature (user phone number) is equal to the first number on your unique list above
 #
 # .. your code here ..
-
+user1 = df[df.In == Inl[0]]
 
 # INFO: Plot all the call locations
 user1.plot.scatter(x='TowerLon', y='TowerLat', c='gray', alpha=0.1, title='Call Locations')
-showandtell()  # Comment this line out when you're ready to proceed
+#showandtell()  # Comment this line out when you're ready to proceed
 
 
 #
@@ -68,8 +74,8 @@ showandtell()  # Comment this line out when you're ready to proceed
 # only examining records that came in on weekends (sat/sun).
 #
 # .. your code here ..
-
-
+user1 = user1[(user1.DOW == 'Sun') | (user1.DOW == 'Sat') ]
+print(user1.shape)
 #
 # TODO: Further filter it down for calls that are came in either before 6AM OR after 10pm (22:00:00).
 # You can use < and > to compare the string times, just make sure you code them as military time
@@ -79,8 +85,8 @@ showandtell()  # Comment this line out when you're ready to proceed
 # slice, print out its length:
 #
 # .. your code here ..
-
-
+user1 = user1[(user1.CallTime < '06:00:00') | (user1.CallTime > '22:00:00')]
+print(user1.shape)
 #
 # INFO: Visualize the dataframe with a scatter plot as a sanity check. Since you're familiar
 # with maps, you know well that your X-Coordinate should be Longitude, and your Y coordinate
@@ -95,7 +101,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.scatter(user1.TowerLon,user1.TowerLat, c='g', marker='o', alpha=0.2)
 ax.set_title('Weekend Calls (<6am or >10p)')
-showandtell()  # TODO: Comment this line out when you're ready to proceed
+#showandtell()  # TODO: Comment this line out when you're ready to proceed
 
 
 
@@ -114,8 +120,12 @@ showandtell()  # TODO: Comment this line out when you're ready to proceed
 # Hint: Make sure you graph the CORRECT coordinates. This is part of your domain expertise.
 #
 # .. your code here ..
-
-
+user1 = user1.loc[:, ['TowerLat', 'TowerLon']]
+kmeans = KMeans(n_clusters=1)
+kmeans.fit(user1)
+centroids = kmeans.cluster_centers_
+ax.scatter(centroids[:, 1], centroids[:, 0], c='r', marker='o', alpha=0.5)
+print(centroids)
 showandtell()  # TODO: Comment this line out when you're ready to proceed
 
 
